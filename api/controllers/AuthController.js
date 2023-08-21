@@ -43,6 +43,7 @@ module.exports = {
             const token = jwt.sign({ id: User.id },secretKey, { expiresIn: 3000 });
             res.set('Authorization', `Bearer ${token}`);  
             console.log('Generated token:', token);
+            return res.status(200).json({ success: true, token });
           });
         } catch (err) {
           return res.serverError(err);

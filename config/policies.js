@@ -24,5 +24,40 @@ module.exports.policies = {
   'AuthController': { 
     'register': true,
     'login': true, 
-  }
+  },
+  'SinhVienController': {
+    'index': true,
+    'find': true,
+    'create': 'authenticated',
+    'update': 'authenticated',
+    'destroy': 'authenticated',
+  },
+  'KhoaController': {
+    'index': true,
+    'find': true,
+    'create': 'authenticated',
+    'update': 'authenticated',
+    'destroy': 'authenticated',
+  },
+  'MonHocController': {
+    'index': true,
+    'find': true,
+    'create': 'authenticated',
+    'update': 'authenticated',
+    'destroy': 'authenticated',
+  },
+  'LopController': {
+    'index': true,
+    'find': true,
+    'create': 'authenticated',
+    'update': 'authenticated',
+    'destroy': 'authenticated',
+  },
+  'DiemController': {
+    'index': true,
+    'find': true,
+    'create': 'authenticated',
+    'update': 'authenticated',
+    'destroy': 'authenticated',
+  },
 };
