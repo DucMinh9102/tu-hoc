@@ -15,6 +15,7 @@
     "grunt": "1.0.4",
     "js": "^0.1.0",
     "jsonwebtoken": "^9.0.1",
+    "nodemon": "^3.0.1",
     "passport": "^0.6.0",
     "passport-facebook": "^3.0.0",
     "passport-google-oauth2": "^0.2.0",
@@ -24,9 +25,11 @@
     "sails-hook-grunt": "^5.0.0",
     "sails-hook-orm": "^4.0.0",
     "sails-hook-sockets": "^2.0.0",
-    "sails-mysql": "^3.0.1"
+    "sails-mysql": "^3.0.1",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
+    "cypress": "^12.17.4",
     "eslint": "5.16.0"
   },
   "scripts": {

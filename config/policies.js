@@ -17,47 +17,48 @@ module.exports.policies = {
   *                                                                          *
   ***************************************************************************/
 
-  '*': 'authenticated',
-  'auth': {
-    '*': true
-  },
+  '*': 'isAuthorized',
+  // 'auth': {
+  //   '*': true
+  // },
   'AuthController': { 
     'register': true,
     'login': true, 
+    'logout':true,
   },
   'SinhVienController': {
     'index': true,
     'find': true,
-    'create': 'authenticated',
-    'update': 'authenticated',
-    'destroy': 'authenticated',
+    'create': 'isAuthorized',
+    'update': 'isAuthorized',
+    'destroy': 'isAuthorized',
   },
   'KhoaController': {
     'index': true,
     'find': true,
-    'create': 'authenticated',
-    'update': 'authenticated',
-    'destroy': 'authenticated',
+    'create': 'isAuthorized',
+    'update': 'isAuthorized',
+    'destroy': 'isAuthorized',
   },
   'MonHocController': {
     'index': true,
     'find': true,
-    'create': 'authenticated',
-    'update': 'authenticated',
-    'destroy': 'authenticated',
+    'create': 'isAuthorized',
+    'update': 'isAuthorized',
+    'destroy': 'isAuthorized',
   },
   'LopController': {
     'index': true,
     'find': true,
-    'create': 'authenticated',
-    'update': 'authenticated',
-    'destroy': 'authenticated',
+    'create': 'isAuthorized',
+    'update': 'isAuthorized',
+    'destroy': 'isAuthorized',
   },
   'DiemController': {
     'index': true,
     'find': true,
-    'create': 'authenticated',
-    'update': 'authenticated',
-    'destroy': 'authenticated',
+    'create': 'isAuthorized',
+    'update': 'isAuthorized',
+    'destroy': 'isAuthorized',
   },
 };

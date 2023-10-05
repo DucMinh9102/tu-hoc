@@ -7,7 +7,7 @@ passport.serializeUser((User, done) => {
   });
   
   passport.deserializeUser((id, done) => {
-    User.findOne({ id }, (err, User) => {
+    User.findOne({ id: id }, (err, User) => {
       done(err, User);
     });
   });
@@ -19,12 +19,14 @@ passport.serializeUser((User, done) => {
     try {
       const user = await User.findOne({ Username });
       if (!user) {
-        return done(null, false, { message: 'Incorrect username or password.' });
+        console.log(`Incorrect username`);
+        return done(null, false, { message: 'Incorrect username' });
       }
   
       const isValidPassword = await bcrypt.compare(Password, user.Password);
       if (!isValidPassword) {
-        return done(null, false, { message: 'Incorrect username or password.' });
+        console.log(`Login failed for user ${Username}: Incorrect password`);
+        return done(null, false, { message:'Incorrect password'});
       }
   
       return done(null, user, { message: 'Logged in successfully.' });

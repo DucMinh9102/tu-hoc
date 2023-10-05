@@ -18,17 +18,16 @@ module.exports = {
   },
 
   create: async (req, res) => {
-    let { MaSV, TenSV } = req.body;
-    let existScore = await Diem.findOne({ MaSV: MaSV });
-    if (existScore) {
-      if (existScore.TenSV !== TenSV) {
-        return res.status(400).json({ error: 'Tên sinh viên không đúng', errorCode: 'WRONG_TENSV' })
-      } else {
-        let newScore = await Diem.create(req.body).fetch();
-        return res.json(newScore);
-      }
+    let {MaSV, TenSV} = req.body;
+    let checkMaSV = await SinhVien.findOne({MaSV: MaSV});
+    let checkTenSV = await SinhVien.findOne({TenSV: TenSV});
+    if (!checkMaSV) {
+      return res.status(400).json({error: 'Mã sinh viên không tồn tại', errorCode: 'NOTFOUND_MaSV'});
+    }else if(!checkTenSV){
+      return res.status(405).json({error: 'Tên sinh viên không tồn tại', errorCode: 'NOTFOUND_TenSV'});
     }
-    return res.status(400).json({ error: 'Mã sinh viên không tồn tại', errorCode: 'NOTFOUND_MASV' })
+    let newScore = await Diem.create(req.body).fetch();
+    return res.json(newScore);
   },
 
   update: async (req, res) => {

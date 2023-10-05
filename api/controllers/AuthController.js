@@ -30,30 +30,36 @@ module.exports = {
 
       login: async (req, res) => {
         passport.authenticate('local', async (err, User, info) => {
-          if (err || !User ) {
-            return res.status(400).json({ error: 'Login failed', errorCode:'WRONG_USERNAME'});
-          }else if(err || !req.body.Password) {
-            return res.status(400).json({ error: 'Login failed', errorCode:'WRONG_PASS'});
+          if (err) {
+            return res.status(500).json({ error: 'Internal server error', errorCode: 'INTERNAL_ERROR' });
           }
-          try {
+          if (info && info.message === 'Incorrect password') {
+            console.log('Info Message:', info.message);
+            return res.status(400).json({ error: 'Wrong password', errorCode: 'WRONG_PASS' });
+          }
+          if (!User) {
+            return res.status(400).json({ error: 'Wrong username', errorCode: 'WRONG_USERNAME' });
+          }
+      
           req.login(User, async (err) => {
             if (err) {
-              return res.serverError(err);
+              return res.status(500).json({ error: 'Internal server error', errorCode: 'INTERNAL_ERROR' });
             }
-            const token = jwt.sign({ id: User.id },secretKey, { expiresIn: 3000 });
-            res.set('Authorization', `Bearer ${token}`);  
+            const token = jwt.sign({ id: User.id }, secretKey, { expiresIn: '2h' });
+            res.set('Authorization', `Bearer ${token}`);
             console.log('Generated token:', token);
             return res.status(200).json({ success: true, token });
           });
-        } catch (err) {
-          return res.serverError(err);
-        }
-      })(req, res);
-         },
+        })(req, res);
+      },
     
-      logout: async (req, res) => {
-        req.logout();
-        return res.ok({ message: 'Logged out successfully' });
-      }
+         logout: async (req, res) => {
+          req.logout((err) => {
+            if (err) {
+              return res.serverError(err);
+            }
+            return res.ok({ message: 'Logged out successfully' });
+          });
+        }
 };
 
