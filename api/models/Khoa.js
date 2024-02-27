@@ -10,7 +10,7 @@ module.exports = {
   attributes: {
     MaKhoa: { type: 'string', required: true, },
     TenKhoa: { type: 'string', required: true, },
-    SoLop: { type: 'string', required: true, },
+    SoLop: { type: 'number', required: true, },
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝

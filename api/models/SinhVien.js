@@ -11,6 +11,11 @@ module.exports = {
     MaSV: { type: 'string', required: true, },
     TenSV: { type: 'string', required: true, },
     TenLop: { type: 'string', required: true, },
+    MaKhoa: { type: 'string',},
+    TenKhoa: { type: 'string'},
+    NienKhoa: { type: 'string'},
+
+
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝

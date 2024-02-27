@@ -18,9 +18,6 @@ module.exports.policies = {
   ***************************************************************************/
 
   '*': 'isAuthorized',
-  // 'auth': {
-  //   '*': true
-  // },
   'AuthController': { 
     'register': true,
     'login': true, 
@@ -46,6 +43,9 @@ module.exports.policies = {
     'create': 'isAuthorized',
     'update': 'isAuthorized',
     'destroy': 'isAuthorized',
+  },
+  'DkyTinController': {
+    'register': 'isAuthorized',
   },
   'LopController': {
     'index': true,

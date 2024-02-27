@@ -12,9 +12,10 @@ module.exports = {
     TenSV: { type: 'string', required: true, },
     TenLop: { type: 'string', required: true, },
     TenMH: { type: 'string', required: true, },
-    DiemCC: { type: 'string', required: true, },
-    DiemKT: { type: 'string', required: true, },
-    DiemThi: { type: 'string', required: true, },
+    Ki: { type: 'string', required: true },
+    DiemCC: { type: 'number', required: true, },
+    DiemKT: { type: 'number', required: true, },
+    DiemThi: { type: 'number', required: true, },
     DiemTK: { type: 'string', required: true, },
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗

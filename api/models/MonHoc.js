@@ -10,7 +10,7 @@ module.exports = {
   attributes: {
     MaMH: { type: 'string', required: true, },
     TenMH: { type: 'string', required: true, },
-    SoTinChi: { type: 'string', required: true, },
+    SoTinChi: { type: 'number', required: true, },
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
@@ -26,6 +26,5 @@ module.exports = {
     //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
 
   },
-
 };
 

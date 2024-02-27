@@ -10,7 +10,8 @@ module.exports = {
   attributes: {
     MaLop: { type: 'string', required: true, },
     TenLop: { type: 'string', required: true, },
-    SiSo: { type: 'string', required: true, },
+    SiSo: { type: 'number', required: true, },
+
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝

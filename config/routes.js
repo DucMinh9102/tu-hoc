@@ -59,6 +59,8 @@ module.exports.routes = {
   'POST /Diem': 'DiemController.create',
   'PUT /Diem/:id': 'DiemController.update',
   'DELETE /Diem/:id': 'DiemController.destroy',
+  //Đăng ký tín
+  'POST /DkyTin': 'DkyTinController.register',
   /***************************************************************************
   *                                                                          *
   * More custom routes here...                                               *
