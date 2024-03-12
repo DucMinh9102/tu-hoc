@@ -26,6 +26,7 @@ module.exports.policies = {
   'SinhVienController': {
     'index': true,
     'find': true,
+    'findStudentsByDepartment':true,
     'create': 'isAuthorized',
     'update': 'isAuthorized',
     'destroy': 'isAuthorized',

@@ -1,3 +1,3 @@
 module.exports = {
-    secretKey: 'PDM912'
-  };
+  secretKey: 'PDM912'
+};

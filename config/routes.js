@@ -27,6 +27,7 @@ module.exports.routes = {
 
   //Sinh viên
   'GET /SinhVien': 'SinhVienController.index',
+  'GET /SinhVien/TenKhoa/:departmentName': 'SinhVienController.findStudentsByDepartment',
   'GET /SinhVien/:id': 'SinhVienController.find',
   'POST /SinhVien': 'SinhVienController.create',
   'PUT /SinhVien/:id': 'SinhVienController.update',

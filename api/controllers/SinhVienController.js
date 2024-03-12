@@ -6,6 +6,26 @@
  */
 
 module.exports = {
+  
+  findStudentsByDepartment: async (req, res) => {
+    try {
+      let departmentName = req.params.departmentName;
+  
+      let students = await SinhVien.find({ TenKhoa: departmentName });
+  
+      if (!students || departmentName.length === 0) {
+        sails.log.warn(`No students found in department ${departmentName}`);
+        return res.status(404).json({ error: 'No students found in the department', errorCode: 'NO_STUDENTS_FOUND' });
+      }
+  
+      sails.log.info(`Get students in department ${departmentName} success`);
+      return res.json(students);
+    } catch (error) {
+      sails.log.error(`Error finding students by department: ${error.message}`);
+      return res.serverError(error);
+    }
+  },
+
   index: async (req, res) => {
     try {
       let allStudents = await SinhVien.find();
