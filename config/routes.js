@@ -57,10 +57,11 @@ module.exports.routes = {
   //Điểm
   'GET /Diem': 'DiemController.index',
   'GET /Diem/:id': 'DiemController.find',
+  'GET /Diem/TenSV/:studentName': 'DiemController.findStudentsByName',
   'POST /Diem': 'DiemController.create',
   'PUT /Diem/:id': 'DiemController.update',
   'DELETE /Diem/:id': 'DiemController.destroy',
-  //Đăng ký tín
+  //Đăng ký tín1
   'POST /DkyTin': 'DkyTinController.register',
   /***************************************************************************
   *                                                                          *

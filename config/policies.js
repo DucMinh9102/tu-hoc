@@ -58,6 +58,7 @@ module.exports.policies = {
   'DiemController': {
     'index': true,
     'find': true,
+    'findStudentsByName': true,
     'create': 'isAuthorized',
     'update': 'isAuthorized',
     'destroy': 'isAuthorized',

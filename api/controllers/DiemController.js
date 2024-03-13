@@ -8,6 +8,26 @@
 const validator = require('validator');
 
 module.exports = {
+
+  findStudentsByName: async (req, res) => {
+    try {
+      let studentName = req.params.studentName;
+  
+      let students = await Diem.find({ TenSV: studentName });
+  
+      if (!students || studentName.length === 0) {
+        sails.log.warn(`No students found in department ${studentName}`);
+        return res.status(404).json({ error: 'No students found in the department', errorCode: 'NO_STUDENTS_FOUND' });
+      }
+  
+      sails.log.info(`Get students in department ${studentName} success`);
+      return res.json(students);
+    } catch (error) {
+      sails.log.error(`Error finding students by department: ${error.message}`);
+      return res.serverError(error);
+    }
+  },
+
   index: async (req, res) => {
     try{
     let allScore = await Diem.find();
